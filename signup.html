@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Credit Card</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+  <!-- Styles -->
+  <style type="text/css">
+	* {
+	  box-sizing : border-box;
+	}
+
+	body,
+	html {
+	  height     : 100%;
+	  min-height : 100%;
+	}
+
+	body {
+	  margin           : 0;
+	  background-color : #e7e7e7;
+	  font-family      : 'Roboto',
+	                     sans-serif;
+	}
+
+	.name_field {
+		width            : 140px!important;
+		/*margin           : 60px auto 0;*/
+		border           : 1px solid #ddd;
+		border-radius    : 6px;
+		background-color : #fff;
+		float: left;
+		/*box-shadow       : 1px 2px 3px 0px rgba(0,0,0,0.10);*/
+	}
+
+	.credit-card {
+	  width            : 360px;
+	  /*height           : 400px;*/
+	  margin           : 60px auto 0;
+	  border           : 1px solid #ddd;
+	  border-radius    : 6px;
+	  background-color : #fff;
+	  box-shadow       : 1px 2px 3px 0px rgba(0,0,0,0.10);
+	}
+
+	.form-header {
+	  height        : 60px;
+	  padding       : 20px 30px 0;
+	  border-bottom : 1px solid #E1E8EE;
+	}
+
+	.form-body {
+	  /*height  : 340px;*/
+	  padding : 30px 30px 20px;
+	}
+
+	.title {
+	  margin    : 0;
+	  color     : #5e6977;
+	  font-size : 18px;
+	}
+
+	.card-number,
+	.name_field,
+	.cvc-input input,
+	.month select,
+	.paypal-btn,
+	.proceed-btn,
+	.year select {
+	  height : 42px;
+	}
+
+	.card-number,
+	.name_field,
+	.cvc-input input,
+	.month select,
+	.year select {
+	    font-size: 14px;
+	    font-weight: 100;
+	    line-height: 14px;
+	}
+
+	.card-number,
+	.name_field,
+	.cvc-details,
+	.cvc-input input,
+	.month select,
+	.year select {
+	  color   : #86939e;
+	  opacity : .7;
+	}
+
+	.card-number, .name_field {
+	  width         : 100%;
+	  margin-bottom : 20px;
+	  padding-left  : 20px;
+	  border        : 2px solid #e1e8ee;
+	  border-radius : 6px;
+	}
+
+	.month select,
+	.year select {
+	  -moz-appearance     : none;
+	  -webkit-appearance  : none;
+	  width               : 145px;
+	  margin-bottom       : 20px;
+	  padding-left        : 20px;
+	  border              : 2px solid #e1e8ee;
+	  border-radius       : 6px;
+	  /*background          : url('caret.png') no-repeat;*/
+	  background-position : 85% 50%;
+	}
+
+	.month select {
+	  float : left;
+	}
+
+	.year select {
+	  float : right;
+	}
+
+	.cvc-input input {
+	  width         : 145px;
+	  float         : left;
+	  padding-left  : 20px;
+	  border        : 2px solid #e1e8ee;
+	  border-radius : 6px;
+	  background    : #fff;
+	}
+
+	.cvc-details {
+	  float         : right;
+	  margin-bottom : 20px;
+	  font-size     : 12px;
+	  font-weight   : 300;
+	  line-height   : 16px;
+	}
+
+	.cvc-details p {
+	  margin-top : 6px;
+	}
+
+	.paypal-btn,
+	.proceed-btn {
+	  cursor: pointer;
+	  width         : 100%;
+	  border-color  : transparent;
+	  border-radius : 6px;
+	  font-size     : 16px;
+	}
+
+	.proceed-btn {
+	  margin-bottom : 10px;
+	  background    : #7dc855;
+	}
+
+	.paypal-btn,
+	.proceed-btn {
+	  text-decoration : none;
+	  cursor          : pointer;
+	}
+
+	.proceed-btn {
+	  color : #fff;
+	}
+
+	.error {
+		color: #a94442;
+    	background-color: #f2dede;
+    	border-color: #ebccd1;
+    	padding: 15px;
+    	margin-bottom: 20px;
+    	border: 1px solid transparent;
+    	border-radius: 4px;
+	}
+
+	.success {
+		color: #3c763d;
+    	background-color: #dff0d8;
+    	border-color: #d6e9c6;
+    	padding: 15px;
+    	margin-bottom: 20px;
+    	border: 1px solid transparent;
+    	border-radius: 4px;
+	}
+  </style>
+  <meta name="robots" content="noindex,follow" />
+</head>
+
+<body>
+    <form class="credit-card">
+      <div class="form-header">
+        <h4 class="title">Rooster Registration</h4>
+      </div>
+
+      <div class="form-body">
+      	<div id="message" class=""></div>
+
+        <!-- Card Number -->
+        <input required type="text" class="name_field" name="first_name" style="margin-right: 18px" placeholder="First Name">
+        <input required type="text" class="name_field" name="last_name" placeholder="Last Name">
+        <input required type="text" class="card-number" name="phone" placeholder="Phone Number">
+        <input required type="email" class="card-number" name="email" placeholder="Email">
+        <input required type="password" class="card-number" name="password" placeholder="Password">
+        <input required type="text" class="card-number" name="card" placeholder="Card Number">
+
+        <!-- Date Field -->
+        <div class="date-field">
+          <div class="month">
+            <select required name="Month">
+              <option value="01">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+          <div class="year">
+            <select required name="Year">
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Card Verification Field -->
+        <div class="card-verification">
+          <div class="cvc-input">
+            <input required type="text" name="cvc" placeholder="cvc">
+          </div>
+          <div class="cvc-details">
+            <p>3 or 4 digits usually found <br> on the signature strip</p>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <button type="submit" class="proceed-btn">
+        	Proceed
+        </button>
+      </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+			$('form').submit(function(e) {
+
+				// build form data for ajax request
+		        var formData = {
+		            'first_name': $('input[name=first_name]').val(),
+		            'last_name': $('input[name=last_name]').val(),
+		            'email': $('input[name=email]').val(),
+		            'phone': $('input[name=phone]').val(),
+					'password': $('input[name=password]').val(),
+					'card': $('input[name=card]').val(),
+					'month': $('input[name=month]').val(),
+					'year': $('input[name=year]').val(),
+					'cvc': $('input[name=cvc]').val(),
+		        };
+
+		        console.log(formData);
+
+		        // Send request to create app user and stripe subscription
+		        $.ajax({
+		            type: 'POST',
+		            url: 'http://api-staging.roosterlocal.com/v1/users/subscribe',
+		            data: formData,
+		            dataType: 'json',
+		            encode: true
+		        })
+	            .done(function(data) {
+	            	// Send request to create nest user
+	                console.log(data);
+
+	                if(data.message === 'success') {
+
+	                	var nestData = {
+	                		username: formData.first_name + formData.last_name,
+	                		email: formData.email,
+	                		password: formData.password,
+	                	};
+
+	                	$.ajax({
+				            type: 'POST',
+				            url: 'https://api.learnworlds.com/users',
+				            data: nestData,
+				            dataType: 'json',
+				            encode: true
+				        })
+			            .done(function(data) {
+			            	$('#message').addClass('success').removeClass('error').text('New user registered: ' + formData.first_name + ' ' + formData.last_name);
+			            	$('form').find("input[type=text], textarea").val("");
+			            }).fail(function() {
+		    				$('#message').addClass('error').removeClass('success').text('Something went wrong. Please call us for support: 561-749-9180.');
+		  				});
+	                }
+	            }).fail(function() {
+    				$('#message').addClass('error').removeClass('success').text('Something went wrong. Please call us for support: 561-749-9180.');
+  				});
+
+		        e.preventDefault();
+		    });
+
+
+		});
+	</script>
+
+</body>
+
+</html>
